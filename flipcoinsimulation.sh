@@ -1,10 +1,15 @@
-randomCheck=$((RANDOM%2))
-        if [ $randomCheck -eq 1 ]
-        then
-                ((Heads++))
-        else
+Heads=0
+Tails=0
+while [[ $Heads -lt 21 && $Tails -lt 21 ]]
+do
+ randomCheck=$((RANDOM%2))
+         if [ $randomCheck -eq 1 ]
+         then
+                 ((Heads++))
+         else
                 ((Tails++))
-        fi
+         fi
+done
 if [ $randomCheck -eq 1 ]
    	then
       	((Heads++))
@@ -22,3 +27,6 @@ if [ $randomCheck -eq 1 ]
       	fi
    	done
 	done
+
+echo "Heads: $Heads"
+echo "Tails : $Tails"
